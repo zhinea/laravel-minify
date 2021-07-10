@@ -16,12 +16,5 @@
             "name": "muhamad-fadla",
             "email": "zidanfadla90@gmail.com"
         }
-    ],
-    "extra": {
-        "laravel": {
-            "providers": [
-                "Dyumna\\Minify\\PackageServiceProvider"
-            ]
-        }
-    }
+    ]
 }
