@@ -1,0 +1,27 @@
+{
+    "name": "dyumna/minify",
+    "description": "Simple Css/Javascript minify",
+    "type": "metapackage",
+    "require": {
+        "php": "^7.2.5 || ^8.0",
+        "illuminate/support": "^6.0 || ^7.0 || ^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Dyumna\\Minify\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "muhamad-fadla",
+            "email": "zidanfadla90@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Dyumna\\Minify\\PackageServiceProvider"
+            ]
+        }
+    }
+}
