@@ -20,7 +20,14 @@ add ``Dyumna\Minify\PackageServiceProvider::class,`` in app/config.php
         Dyumna\Minify\PackageServiceProvider::class,
     ]
     
-three
+
+Three
+------------
+
+run  ``php artisan vendor:publish Dyumna\Minify\PackageServiceProvider`` on terminal you laravel project
+ 
+ 
+Four
 ------------
 
 ``php artisan minify:js`` to minify all javascript files
