@@ -7,7 +7,7 @@ First
 
 add Dyumna/Minify to your laravel project
 
-``https://packagist.org/packages/dyumna/minify``
+``composer require dyumna/minify``
 
 
 Two
