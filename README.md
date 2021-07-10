@@ -5,7 +5,9 @@ Simple Javascript and CSS minify
 First
 ------------
 
-clone this repository in your laravel project
+add Dyumna/Minify to your laravel project
+
+``https://packagist.org/packages/dyumna/minify``
 
 
 Two
@@ -24,7 +26,7 @@ add ``Dyumna\Minify\PackageServiceProvider::class,`` in app/config.php
 Three
 ------------
 
-run  ``php artisan vendor:publish Dyumna\Minify\PackageServiceProvider`` on terminal you laravel project
+run  ``php artisan vendor:publish --provider="Dyumna\Minify\PackageServiceProvider"`` on terminal you laravel project
  
  
 Four
