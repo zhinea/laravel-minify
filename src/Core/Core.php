@@ -7,8 +7,8 @@ use Illuminate\Console\Command;
 use Illuminate\Support\Str;
 
 class Core extends Command
-{	
-	/**
+{
+    /**
      * The instance console
      */
     protected $console;
@@ -21,8 +21,9 @@ class Core extends Command
         $this->console = $_console;
     }
 
-    public function className(){
-    	return class_basename($this);
+    public function className()
+    {
+        return class_basename($this);
     }
 
     /**
@@ -37,7 +38,7 @@ class Core extends Command
         $files = (array) $finder->search(Str::lower($this->className()));
         $this->console->newLine();
 
-        if(count($files) === 0){
+        if (count($files) === 0) {
             $this->console->line('✨No '. $this->className() .' file✨');
             return;
         }
@@ -48,8 +49,8 @@ class Core extends Command
         $failed_jobs = 0;
         $success_jobs = 0;
 
-        foreach($response as $res){
-            if(!$res->status){
+        foreach ($response as $res) {
+            if (!$res->status) {
                 $failed_jobs++;
                 $this->console->info('[FAIL] ' . $res->path);
                 continue;
@@ -68,8 +69,6 @@ class Core extends Command
                 $success_jobs
             ]
         ]);
-
-
     }
 
 

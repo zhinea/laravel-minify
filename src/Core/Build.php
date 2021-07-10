@@ -4,11 +4,10 @@ namespace Dyumna\Minify\Core;
 
 use Dyumna\Minify\Support\Finder;
 use Illuminate\Console\Command;
-use Illuminate\Support\Str;
 
 class Build extends Command
-{	
-	/**
+{
+    /**
      * The instance console
      */
     protected $console;
@@ -31,10 +30,10 @@ class Build extends Command
 
         $finder = new Finder();
 
-        $files = (array) $finder->search('js','css');
+        $files = (array) $finder->search('js', 'css');
         $this->console->newLine();
 
-        if(count($files) === 0){
+        if (count($files) === 0) {
             $this->console->line('✨No Javascript or CSS file✨');
             return;
         }
@@ -51,12 +50,10 @@ class Build extends Command
             'css' => 0,
         ];
 
-        foreach($response as $res){
-
+        foreach ($response as $res) {
             $ext = $this->getExt($res->path);
             
-            if(!$res->status){
-
+            if (!$res->status) {
                 $failed_jobs[$ext]++;
 
                 $this->console->info('[FAIL] ' . $res->path);
@@ -71,7 +68,7 @@ class Build extends Command
         
         $this->console->table([
             'EXT', 'Failed', 'Success'
-        ],[
+        ], [
             [
                 'CSS',
                 $failed_jobs['css'],
@@ -83,7 +80,6 @@ class Build extends Command
                 $success_jobs['js']
             ]
         ]);
-
     }
 
 
@@ -108,7 +104,8 @@ class Build extends Command
         return $jobs;
     }
 
-    public function getExt($path){
+    public function getExt($path)
+    {
         $temp_arr_filename = explode('/', $path);
         $filename = end($temp_arr_filename);
         $temp_arr_ext = explode('.', $filename);

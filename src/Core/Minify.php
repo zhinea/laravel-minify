@@ -7,7 +7,6 @@ use Dyumna\Minify\Support\Request;
 
 class Minify
 {
-
     public $urls = [
         'js' => 'https://javascript-minifier.com/raw',
         'css' => 'https://cssminifier.com/raw'
@@ -37,7 +36,8 @@ class Minify
         return (new Request())->send($url, [ "input" => $raw]);
     }
 
-    private function getExt($path){
+    private function getExt($path)
+    {
         $temp_arr_filename = explode('/', $path);
         $filename = end($temp_arr_filename);
         $temp_arr_ext = explode('.', $filename);

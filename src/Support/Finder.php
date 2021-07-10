@@ -17,10 +17,10 @@ class Finder
 
         foreach ($rii as $file) {
             if ($file->isDir() || !preg_match('/\.'. $ext .'$/', $file->getPathname())) {
-                if($ext === false ){
+                if ($ext === false) {
                     continue;
                 }
-                if(!preg_match('/\.'. $ext2 .'$/', $file->getPathname())){
+                if (!preg_match('/\.'. $ext2 .'$/', $file->getPathname())) {
                     continue;
                 }
             }
